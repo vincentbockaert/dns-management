@@ -18,4 +18,4 @@ jobs:
     steps: 
       - uses: actions/checkout@v3
       - run: |
-          docker run -e CLOUDFLARE_API_TOKEN="${CLOUDFLARE_API_TOKEN}" --rm -v $(pwd)/dnsconfig.js:/dns/dnsconfig.js -v $(pwd)/creds.json:/dns/creds.json stackexchange/dnscontrol push
+          docker run -e ACCOUNT_ID="${ACCOUNT_ID}" -e CLOUDFLARE_API_TOKEN="${CLOUDFLARE_API_TOKEN}" --rm -v $(pwd):/dns stackexchange/dnscontrol push
