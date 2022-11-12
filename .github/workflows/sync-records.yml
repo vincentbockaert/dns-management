@@ -1,0 +1,21 @@
+name: DNS Sync
+
+# only run for a merged (closed) pull request: 
+# - https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows#pull_request
+
+on: 
+  pull_request:
+    types:
+      - closed
+    paths:
+      - '**.js'
+jobs:
+  sync_if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    env:
+      CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}          
+    steps: 
+      - uses: actions/checkout@v3
+      - run: |
+          docker run -e ACCOUNT_ID="${ACCOUNT_ID}" -e CLOUDFLARE_API_TOKEN="${CLOUDFLARE_API_TOKEN}" --rm -v $(pwd):/dns stackexchange/dnscontrol push
