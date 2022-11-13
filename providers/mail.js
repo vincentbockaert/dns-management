@@ -11,3 +11,18 @@ function includeTutanotaMailRecords() {
     ]
     return l
 }
+
+function includeFastmailMailRecords() {
+    var l = [
+        // mx
+        MX("@", 10, "in1-smtp.messagingengine.com."),
+        MX("@",20,"in2-smtp.messagingengine.com."),
+        // dkim
+        CNAME("fm1._domainkey","fm1.vincentbockaert.xyz.dkim.fmhosted.com."),
+        CNAME("fm2._domainkey","fm2.vincentbockaert.xyz.dkim.fmhosted.com."),
+        CNAME("fm3._domainkey","fm3.vincentbockaert.xyz.dkim.fmhosted.com."),
+        // spf
+        TXT("@","v=spf1 include:spf.messagingengine.com -all")
+    ]
+    return l
+}
