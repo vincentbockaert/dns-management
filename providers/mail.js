@@ -14,8 +14,9 @@ function includeTutanotaMailRecords() {
 
 function inncludeSimpeLogin() {
 
-    let sl = "simplelogin";
-    let base = ".vincentbockaert.xyz.";
+    var sl = "simplelogin";
+    var base = ".vincentbockaert.xyz.";
+
     var l = [
         MX(sl,10,"app."+sl+base),
         A("app."+sl,"45.79.251.178"),
