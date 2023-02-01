@@ -22,7 +22,7 @@ function inncludeSimpeLogin() {
         A("app."+sl,"45.79.251.178"),
         TXT("dkim._domainkey."+sl,"v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA8wIm5EMmhzxjICqCANVpUejgTAfsRyFUL4hRi22v8Ols0fUutlt26AK68gkyVrGFG2edOV4S9/zH1gROwBWy5yE+gRkwNsKncWpVlVpkdJPYIGVKiF2fq29cOYNC6Q44BjEdziX9SexRxKulnNbpvPUX8TB06wcxWLkUNce62Oox66qkPfc6nCuzJBk8oAGerR0NPO8TqUAHZhtvM1q13pvkezklsQGq2WTHaS4uW/0LAf+D4toKUhN7n3oe7nXLPWlkxamK41QipbGMrD3kQt2ZuHnsOThaWzN3sQlFs35sbEpit9oDTEkUXO6Bd/p7BLRpbfvNdbW8bpzpMAeXfwIDAQAB"),
         TXT(sl,"v=spf1 mx ~all"),
-        DMARC("_dmarc."+sl,"v=DMARC1; p=quarantine; adkim=r; aspf=r")
+        TXT("_dmarc."+sl,"v=DMARC1; p=quarantine; adkim=r; aspf=r")
     ]
 }
 
