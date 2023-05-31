@@ -16,7 +16,7 @@ function includeProtonMailRecords() {
     var records = [
         MX("@", 10, "mail.protonmail.ch."),
         MX("@", 20, "mailsec.protonmail.ch."),
-        SPF("@", "v=spf1 include:_spf.protonmail.ch mx -all"),
+        TXT("@", "v=spf1 include:_spf.protonmail.ch mx -all"),
         CNAME("protonmail._domainkey", "protonmail.domainkey.daxdwij3h22rp3mr4kvkeokuurdra4if6ikhm2ndtbjr4gc54hbsq.domains.proton.ch."),
         CNAME("protonmail2._domainkey", "protonmail2.domainkey.daxdwij3h22rp3mr4kvkeokuurdra4if6ikhm2ndtbjr4gc54hbsq.domains.proton.ch."),
         CNAME("protonmail3._domainkey", "protonmail3.domainkey.daxdwij3h22rp3mr4kvkeokuurdra4if6ikhm2ndtbjr4gc54hbsq.domains.proton.ch."),
